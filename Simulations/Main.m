@@ -17,7 +17,7 @@ hr = 1.4; %height receiver (UE)
 ht = 5; %height transmitter (BS)
 frac = (hb-hr)/(ht-hr);
 simTime = 1*60*60; %sec Total Simulation time
-tstep = 0.0001;
+tstep = 0.001;
 % tstep = 1; %(sec) time step
 mu = 2; %Expected bloc dur =1/mu sec
 R = 100; %m Radius
