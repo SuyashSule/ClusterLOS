@@ -14,7 +14,7 @@
 module purge
 module load matlab/2019b
 
-RUNDIR=RUNDIR=$SCRATCH/ClusterBlockages/Simulations/
+RUNDIR=$SCRATCH/LOS_ClusterBL/Simulations/
 cd $RUNDIR
 
 
