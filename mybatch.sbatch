@@ -2,12 +2,12 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
-#SBATCH --time=2:00:00
-#SBATCH --mem=4GB
+#SBATCH --time=15:00:00
+#SBATCH --mem=1GB
 #SBATCH --job-name=myTest
 #SBATCH --mail-type=END
 #SBATCH --mail-user=ss11524@nyu.edu
-#SBATCH --output=suyash_%j.out
+#SBATCH --output=SU_Velocity_2_5_10_%j.out
 
 
 
