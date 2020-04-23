@@ -45,16 +45,16 @@ BL_PPP_locs_old = BL_PPPlocs_init; BL_PPP_locs_new = BL_PPPlocs_init;
 V_vecs_PPP = zeros(n_BL_PPP,2);
 
 %%%%%%comment to run on HPC%%%%%%%%
-timestamps = 0:tstep:simTime;
-BL_locations = zeros(nsteps,n_BL_MCP+n_BL_PPP,2); 
-V_vectors_animation = zeros(nsteps,n_BL_MCP+n_BL_PPP,2);
+%timestamps = 0:tstep:simTime;
+%BL_locations = zeros(nsteps,n_BL_MCP+n_BL_PPP,2); 
+%V_vectors_animation = zeros(nsteps,n_BL_MCP+n_BL_PPP,2);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 while (t < simTime)
     %%%%%%comment to run on HPC%%%%%%%%
-    BL_locations(index_step+1,:,:) =  vertcat(BL_MCP_locs_new,BL_PPP_locs_new);
-    V_vectors_animation(index_step+1,:,:) = vertcat([Vc.*cosd(theta_MCP) Vc.*sind(theta_MCP)]...
-        ,[Vp.*cosd(theta_PPP) Vp.*sind(theta_PPP)]);
+    %BL_locations(index_step+1,:,:) =  vertcat(BL_MCP_locs_new,BL_PPP_locs_new);
+    %V_vectors_animation(index_step+1,:,:) = vertcat([Vc.*cosd(theta_MCP) Vc.*sind(theta_MCP)]...
+     %   ,[Vp.*cosd(theta_PPP) Vp.*sind(theta_PPP)]);
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     V_vecs_MCP = [Vc.*cosd(theta_MCP) Vc.*sind(theta_MCP)];
     V_vecs_PPP = [Vp.*cosd(theta_PPP) Vp.*sind(theta_PPP)];
@@ -136,7 +136,7 @@ end
 sprintf("[avg_blockage_probability = %f, avg_blockage_duration=%f, blockage_freq=%f]"...
     ,avg_blockage_probability, avg_blockage_duration, blockage_freq)
 
-RunAnimation(timestamps, clusterCenters, ...
-    radiusCluster, BS_locs, BL_locations, V_vectors_animation, 1*tstep, simTime);
+%RunAnimation(timestamps, clusterCenters, ...
+%    radiusCluster, BS_locs, BL_locations, V_vectors_animation, 1*tstep, simTime);
 
 end
