@@ -20,7 +20,7 @@ ht = 5; %height transmitter (BS)
 frac = (hb-hr)/(ht-hr);
 simTime = 3*60*60; %sec Total Simulation time
 % tstep = 0.0001;
-tstep = 1; %(sec) time step
+tstep = 0.001; %(sec) time step
 mu = 2; %Expected bloc dur =1/mu sec
 R = 100; %m Radius
 omegaVal = [0, pi/3]; %self blockage angle
