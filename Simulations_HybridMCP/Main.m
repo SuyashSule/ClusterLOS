@@ -30,7 +30,7 @@ omegaVal = [0, pi/3]; %self blockage angle
 % radiusCluster = 1/4.0./sqrt(densityParent);
 % densityDaughter = densityBL_PPP*16/pi;
 numPerCl = 10;
-densityParent = RHO*densityBL_PPP/numPerCl;
+densityParent = RHO.*densityBL_PPP/numPerCl;
 radiusCluster = [10,10,10];
 densityDaughter = numPerCl/pi./radiusCluster.^2;%10/pi/20/20;
 
