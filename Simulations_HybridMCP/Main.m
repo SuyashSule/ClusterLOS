@@ -6,11 +6,11 @@ if(isempty(aID))
 end
 rng('shuffle');
 
-% densityBS = [100,150,200,300,400,500]*10^(-6);
-% densityBL_PPP = [0.01,0.1];
-densityBS = 200*10^(-6);
-densityBL_PPP = 0.01;
-RHO = 0;%[0.2, 0.5, 1];
+densityBS = [100,200,300,400,500]*10^(-6);
+densityBL_PPP = [0.01,0.01,0.1];
+% densityBS = 200*10^(-6);
+% densityBL_PPP = 0.01;
+RHO = [0.2, 0.5, 1];
 L = 100;
 Vp = 3; %velocity in m/s
 Vc = 0.5;
@@ -31,8 +31,8 @@ omegaVal = [0, pi/3]; %self blockage angle
 % densityDaughter = densityBL_PPP*16/pi;
 numPerCl = 10;
 densityParent = RHO*densityBL_PPP/numPerCl;
-radiusCluster = 10;
-densityDaughter = 10/pi./radiusCluster.^2;%10/pi/20/20;
+radiusCluster = [10,10,10];
+densityDaughter = numPerCl/pi./radiusCluster.^2;%10/pi/20/20;
 
 %Parameter for PPP blockers
 densityPPP = (1-RHO).*densityBL_PPP;
@@ -64,12 +64,12 @@ for indexBS=1:length(densityBS)
 %          if isempty(blockage_durations)~=0
 %          avg_blockage_duration = sum(blockages_durations)/length(blockages_durations);
 %          end
-%          data(indexBS,indexBL,:) = ...
-%              [isUE_insideCluster,avg_blockage_probability,avg_blockage_duration, blockage_freq];
+          data(indexBS,indexBL,:) = ...
+              [isUE_insideCluster,avg_blockage_probability,avg_blockage_duration, blockage_freq];
 %          data(1,1,:)
      end
 end
 
 % RunAnimation(timestamps, BS_locs, BL_locations, V_vectors, 0.1*tstep, simTime);
-% save(strcat('SimulationOutput','_',num2str(aID),'.mat'),'data')
+save(strcat('Sim_hybridMCP_RHO_2_5_10','_',num2str(aID),'.mat'),'data')
 toc
