@@ -31,7 +31,7 @@ omegaVal = [0, pi/3]; %self blockage angle
 % densityDaughter = densityBL_PPP*16/pi;
 numPerCl = 10;
 densityParent = RHO.*densityBL_PPP/numPerCl;
-radiusCluster = 10;
+radiusCluster = [10,10,10];
 densityDaughter = numPerCl./pi./radiusCluster.^2;%10/pi/20/20;
 
 %Parameter for PPP blockers
